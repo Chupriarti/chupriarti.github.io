@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<style>
+    .noDisplay {
+        display: none;
+    }
+</style>
 <body>
     <h1>Sample catalog</h1>
     <table>
@@ -116,5 +121,14 @@
             </tr>
         </tbody>
     </table>
+    <script>
+        const title = document.querySelector("h1");
+        const table = document.querySelector("table");
+        const toggleTableDisplay = (e) => {
+            table.classList.toggle("noDisplay");
+        };
+        title.addEventListener("click", toggleTableDisplay);
+        table.classList.toggle("noDisplay");
+    </script>
 </body>
 </html>
