@@ -1,20 +1,273 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chupriarti's Testing Lab</title>
+    <title>Портфолио программиста</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .nav-container {
+            background: #34495e;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+
+        .hamburger-menu {
+            display: none;
+        }
+
+        .category {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .category h2 {
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .project-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            flex: 1;
+        }
+
+        .site-btn {
+            background: #3498db;
+            color: white;
+        }
+
+        .github-btn {
+            background: #2ecc71;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger-menu {
+                display: block;
+                padding: 1rem;
+                background: #34495e;
+            }
+
+            #menu-toggle {
+                display: none;
+            }
+
+            .hamburger-label {
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+
+            #menu-toggle:checked ~ .mobile-nav-links {
+                display: flex;
+            }
+
+            .mobile-nav-links {
+                display: none;
+                flex-direction: column;
+                background: #34495e;
+                padding: 1rem;
+                list-style: none;
+            }
+
+            .mobile-nav-links a {
+                color: white;
+                text-decoration: none;
+                padding: 0.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Chupriarti's Testing Lab</h1>
+    <header class="header">
+        <h1>Amat victoria curam</h1>
     </header>
-    <main>
 
-    </main>
-    <footer>
+    <nav class="nav-container">
+        <div class="hamburger-menu">
+            <label for="menu-toggle" class="hamburger-label">☰</label>
+            <input type="checkbox" id="menu-toggle">
+            <ul class="mobile-nav-links">
+                <li><a href="#personal">Личные проекты</a></li>
+                <li><a href="#chess">Шахматы</a></li>
+                <li><a href="#metallurgy">Металлургия</a></li>
+                <li><a href="#mini">Мини проекты</a></li>
+            </ul>
+        </div>
         
-    </footer>
+        <ul class="nav-links">
+            <li><a href="#personal">Личные проекты</a></li>
+            <li><a href="#chess">Шахматы</a></li>
+            <li><a href="#metallurgy">Металлургия</a></li>
+            <li><a href="#mini">Мини проекты</a></li>
+        </ul>
+    </nav>
+
+    <section class="category" id="personal">
+        <h2>Личные проекты</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Аукцион марок</h3>
+                <div class="buttons-container">
+                    <a href="#" class="btn site-btn">Сайт</a>
+                    <a href="#" class="btn github-btn">GitHub</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Сайт знакомств</h3>
+                <div class="buttons-container">
+                    <a href="#" class="btn site-btn">Сайт</a>
+                    <a href="#" class="btn github-btn">GitHub</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Сайт технической поддержки</h3>
+                <div class="buttons-container">
+                    <a href="#" class="btn site-btn">Сайт</a>
+                    <a href="#" class="btn github-btn">GitHub</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Тестирование скорости набора текста</h3>
+                <div class="buttons-container">
+                    <a href="#" class="btn site-btn">Сайт</a>
+                    <a href="#" class="btn github-btn">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="category" id="chess">
+        <h2>Шахматы</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Классические</h3>
+                <div class="buttons-container">
+                    <a href="#" class="btn site-btn">Сайт</a>
+                    <a href="#" class="btn github-btn">GitHub</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Теневые шахматы</h3>
+                <div class="buttons-container">
+                    <a href="#" class="btn site-btn">Сайт</a>
+                    <a href="#" class="btn github-btn">GitHub</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Покер шахматы</h3>
+                <div class="buttons-container">
+                    <a href="#" class="btn site-btn">Сайт</a>
+                    <a href="#" class="btn github-btn">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="category" id="metallurgy">
+        <h2>Металлургия</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Система слежения за металлом</h3>
+                <div class="buttons-container">
+                    <a href="#" class="btn site-btn">Сайт</a>
+                    <a href="#" class="btn github-btn">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="category" id="mini">
+        <h2>Мини проекты</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Покер планирование</h3>
+                <div class="buttons-container">
+                    <a href="#" class="btn site-btn">Сайт</a>
+                    <a href="#" class="btn github-btn">GitHub</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Tier list онлайн</h3>
+                <div class="buttons-container">
+                    <a href="#" class="btn site-btn">Сайт</a>
+                    <a href="#" class="btn github-btn">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
